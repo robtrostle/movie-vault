@@ -1,0 +1,32 @@
+@import '../../../styles/colors';
+
+header {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem; //up and down, left/right from sided
+    height: 65px;
+    background-color: $bgColorLight;
+    margin: 0px;
+    border-bottom: 1px solid (255, 255, 255, 0.1);
+
+    &-logo {//still inside nav bar, put logo properties and links
+      display: block;
+      img {
+        width: 60px;
+      }
+    }
+
+    &-links {//parent is navbar-links
+      display: block;
+      padding: 0;
+      margin: 0;
+      list-style: none;//romoves bullet point from list
+      li {//li element
+        display: inline; //next to eachother
+        margin-right: 15px; //push eachother apart
+      }
+    }
+  }
+}
