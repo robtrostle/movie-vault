@@ -23,14 +23,14 @@
             </div>
           </div>
           <div class="stat">
-            <div class="label">Revenue:</div>
+            <div class="label">Seasons:</div>
             <div class="value">
-              {{ tvShow.revenue | currency }}
+              {{ tvShow.number_of_seasons }}
             </div>
           </div>
           <div class="stat">
-            <div class="label">Duration:</div>
-            <div class="value">{{ tvShow.runtime }} min</div>
+            <div class="label">Episode Length:</div>
+            <div class="value">{{ tvShow.episode_run_time }} min</div>
           </div>
           <div class="stat">
             <div class="label">Status:</div>
@@ -38,6 +38,7 @@
               {{ tvShow.status }}
             </div>
           </div>
+
           <div class="stat">
             <div class="label">Genres:</div>
             <div class="value">
@@ -46,6 +47,16 @@
               </span>
             </div>
           </div>
+
+          <div class="stat">
+            <div class="label">Networks:</div>
+            <div class="value">
+              <span *ngFor="let network of tvShow.networks">
+                {{ network.name }}
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
     </p-tabPanel>
