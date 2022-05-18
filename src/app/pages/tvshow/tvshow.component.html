@@ -43,7 +43,7 @@
             <div class="label">Genres:</div>
             <div class="value">
               <span *ngFor="let genre of tvShow.genres">
-                {{ genre.name }}
+                #{{ genre.name }}
               </span>
             </div>
           </div>
@@ -52,7 +52,7 @@
             <div class="label">Networks:</div>
             <div class="value">
               <span *ngFor="let network of tvShow.networks">
-                {{ network.name }}
+                "{{ network.name }}"
               </span>
             </div>
           </div>
