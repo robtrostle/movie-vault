@@ -11,7 +11,7 @@ export interface TvShow {
   overview: string;
   popularity: number;
   poster_path: string;
-  release_date: string;
+  first_air_date: string;
   title: string;
   video: boolean;
   vote_average: number;
@@ -60,7 +60,7 @@ export const mapTvShowToItem = (tvShow: TvShow): Item => {
     vote_average: tvShow.vote_average,
     backdrop_path: tvShow.backdrop_path,
     vote_count: tvShow.vote_count,
-    release_date: tvShow.release_date,
+    first_air_date: tvShow.first_air_date,
     overview: tvShow.overview,
     routePath: '/tvshow/' + tvShow.id
   };
