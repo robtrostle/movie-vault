@@ -1,5 +1,6 @@
 import { Item } from '../components/item/item';
 import { Genre } from './genre';
+import { Networks } from './networks';
 
 export interface TvShow {
   adult: boolean;
@@ -16,10 +17,11 @@ export interface TvShow {
   video: boolean;
   vote_average: number;
   vote_count: number;
-  revenue: number;
-  runtime: number;
+  number_of_seasons: number;
+  episode_run_time: [];
   status: string;
   genres: Genre[];
+  networks: Networks[];
 }
 
 export interface TvShowDto {
