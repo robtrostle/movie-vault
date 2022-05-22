@@ -22,12 +22,16 @@
               {{ movie.original_language | uppercase }}
             </div>
           </div>
-          <div class="stat">
-            <div class="label">Revenue:</div>
-            <div class="value">
-              {{ movie.revenue | currency }}
+          <ng-container *ngIf="movie.revenue">
+            <div class="stat">
+              <div class="label">Revenue:</div>
+              <div class="value">
+                {{ movie.revenue | currency }}
+              </div>
             </div>
-          </div>
+          </ng-container>
+          
+
           <div class="stat">
             <div class="label">Duration:</div>
             <div class="value">{{ movie.runtime }} min</div>
@@ -42,7 +46,7 @@
             <div class="label">Genres:</div>
             <div class="value">
               <span *ngFor="let genre of movie.genres">
-                {{ genre.name }}
+                #{{ genre.name }}
               </span>
             </div>
           </div>
