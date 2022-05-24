@@ -1,1 +1,0 @@
-{"ast":null,"code":"const imageBaseUrl = 'https://image.tmdb.org/t/p';\nexport const IMAGES_SIZES = {\n  small: `${imageBaseUrl}/w185`,\n  medium: `${imageBaseUrl}/w342`,\n  large: `${imageBaseUrl}/original`\n};","map":null,"metadata":{},"sourceType":"module"}
