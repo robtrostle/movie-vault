@@ -21,8 +21,8 @@
             <span>{{ item.release_date | date: 'yyyy' }}</span>
           </div>
         </div>
-        <div class="desc mt-6">
-          {{ item.overview }}
+        <div class="card">
+          {{ item.overview.length > 250 ? item.overview.substring(0, 250) + '...' : item.overview }}
         </div>
       </div>
     </div>

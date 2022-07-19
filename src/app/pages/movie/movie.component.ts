@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 import { Movie, MovieCredits, MovieImages, MovieVideo } from 'src/app/models/movie';
 import { MoviesService } from 'src/app/services/movies.service';
 import { IMAGES_SIZES } from '../../constants/images-sizes';
+import { Item } from 'src/app/components/item/item';
 
 @Component({
   selector: 'app-movie',
@@ -16,7 +17,8 @@ export class MovieComponent implements OnInit, OnDestroy {
   movieImages: MovieImages | null = null;
   movieCredits: MovieCredits | null = null;
   imagesSizes = IMAGES_SIZES;
-  similarMovies: Movie[] = [];
+  similarMovies: Item[] = [];
+  hasImage = true;
 
   constructor(private route: ActivatedRoute, private moviesService: MoviesService) {}
 
@@ -61,6 +63,9 @@ export class MovieComponent implements OnInit, OnDestroy {
   getMovieCredits(id: string) {
     this.moviesService.getMovieCredits(id).subscribe((movieCreditsData) => {
       this.movieCredits = movieCreditsData;
+      if(this.movieCredits.cast[1] === null) {
+        this.hasImage = false;
+      }
     });
   }
 }

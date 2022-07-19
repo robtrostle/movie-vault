@@ -80,10 +80,15 @@
   <p-carousel [numVisible]="5" *ngIf="movieCredits" [value]="movieCredits.cast">
     <ng-template let-actor pTemplate="item">
       <div class="actor">
-        <img [src]="imagesSizes.medium + actor.profile_path" alt="" />
+        <img *ngIf="hasImage" [src]="imagesSizes.medium + actor.profile_path" alt="" />
         <span>{{ actor.name }}</span>
       </div>
     </ng-template>
   </p-carousel>
-  <items-banner [items]="similarMovies" title="Similar Movies"></items-banner>
+
+  <div class="grid">
+  <div class="col-6 md:col-3 lg:col-2" *ngFor="let movie of similarMovies">
+  <item [itemData]="movie" title="Simlar Movies"></item>
+  </div>
+</div>
 </ng-container>
