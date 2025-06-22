@@ -14,7 +14,7 @@
           <div class="info">
             <span class="rating">
               <span class="app-icon">star</span>
-              <span class="rating-value">{{ item.vote_average }}</span>
+              <span>{{ itemData.vote_average | number:'1.1-1' }}</span>
               <span>/10</span>
             </span>
             <span>{{ item.vote_count }}</span>
